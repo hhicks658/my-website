@@ -1,0 +1,45 @@
+:root {
+    --lavender: #9c84f2;
+    --soft-purple: #D8BFD8;
+    --medium-purple: #9370DB;
+    --dark-purple: #4B0082;
+    --blush-pink: #FFC0CB;
+    --pastel-mint: #98FF98;
+    --sky-blue: #87CEEB;
+    --creamy-white: #FFFDD0;
+    --text-dark: #28033d;
+    --text-light: #FFFFFF;     
+}
+
+body {
+    background-color: var(--creamy-white);
+    color: var(--text-dark);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+h1, h2 {
+    color: var(--lavender);
+}
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+a {
+    color: var(--medium-purple);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.button {
+    background-color: var(--soft-purple);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: var(--medium-purple);
+}
