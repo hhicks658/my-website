@@ -44,6 +44,33 @@
 }
 
 /* ── VARIABLES ──────────────────────────────── */
+:root {
+  --lavender: #b497bd;
+  --lavender-light: #e8d9ed;
+  --lavender-dark: #7a5a7a;
+  
+  --teal: #6ec1c2;
+  --teal-light: #d0f0f1;
+  --teal-dark: #3b7a7c;
+  
+  --coral: #df61ff;
+  --coral-light: #ffdad4;
+  --coral-dark: #b23c2e;
+  
+  --pink: #ffb6c1;
+  --pink-light: #ffe0eb;
+  --pink-dark: #b36b79;
+  
+  --blue: #87ceeb;
+  --blue-light: #d0f0ff;
+  --blue-dark: #4a90e2;
+  
+  --amber: #ffc107;
+  --amber-light: #fff3cd;
+  --amber-dark: #b28704;
+
+  --text-light: #333333; /* dark gray for better contrast */
+}
 
 
 /* ── BUTTONS ────────────────────────────────── */
