@@ -1,109 +1,403 @@
+/* ── VARIABLES ──────────────────────────────── */
+:root {
+  --lavender:       #b497bd;
+  --lavender-light: #e8d9ed;
+  --lavender-dark:  #7a5a7a;
+
+  --teal:       #6ec1c2;
+  --teal-light: #d0f0f1;
+  --teal-dark:  #3b7a7c;
+
+  --coral:       #df61ff;
+  --coral-light: #ffdad4;
+  --coral-dark:  #b23c2e;
+
+  --pink:       #ffb6c1;
+  --pink-light: #ffe0eb;
+  --pink-dark:  #b36b79;
+
+  --blue:       #87ceeb;
+  --blue-light: #d0f0ff;
+  --blue-dark:  #4a90e2;
+
+  --amber:       #ffc107;
+  --amber-light: #fff3cd;
+  --amber-dark:  #b28704;
+
+  --royal:       #4b0082;
+  --royal-mid:   #6a0dad;
+  --royal-light: #7b2fbe;
+
+  --text-light: #333333;
+  --text-white: #f5effe;
+}
+
+/* ── BASE ───────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(160deg, #2e0057 0%, #4b0082 40%, #6a0dad 100%);
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  color: var(--text-white);
+}
+
+.page-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* ── SECTION HEADINGS ───────────────────────── */
+.section-label h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--lavender-light);
+  margin-bottom: 14px;
+}
+
+/* ── HERO ───────────────────────────────────── */
 .hero {
   display: flex;
   align-items: center;
-  justify-content: flex-end;   /* pushes to the far right */
-  gap: 20px;
-  padding: 40px;
-  background: var(--lavender-light);
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(75,0,130,0.6) 0%, rgba(106,13,173,0.5) 100%);
   border-radius: 20px;
-  margin-bottom: 40px;
+  border: 1px solid rgba(180,150,210,0.35);
+  margin-bottom: 28px;
+  backdrop-filter: blur(8px);
+  transition: background 0.4s ease;
 }
 
+.hero:hover {
+  background: linear-gradient(135deg, rgba(106,13,173,0.7) 0%, rgba(123,47,190,0.6) 100%);
+}
 
 /* ── AVATAR ─────────────────────────────────── */
 .avatar {
-  background: var(--lavender);
-  color: var(--text-light);
-  font-size: 80px;
-  font-weight: 600;
-  position: relative;      /* needed for ::after */
-  flex-shrink: 0;          /* prevents squishing */
+  flex-shrink: 0;
   border-radius: 50%;
   width: 150px;
-  height: 150px;            /* was 60px — fixed to be a circle */
+  height: 150px;
   overflow: hidden;
-  border: 2px solid var(--lavender-dark);
- 
- 
+  border: 2px solid var(--lavender);
   background:
     radial-gradient(circle at 30% 28%, var(--lavender-light) 0%, transparent 70%),
     radial-gradient(circle at 68% 72%, var(--lavender-light) 0%, transparent 70%),
-    radial-gradient(circle at 50% 50%, var(--lavender-light) 0%, transparent 70%),
     var(--lavender);
-  
-    box-shadow:
-    inset 0 0 10px var(--lavender-light), 0 0 20px var(--lavender-light), 0 0 30px var(--lavender-light),
-    inset 4px 4px 10px var(--lavender-dark), 0 0 40px var(--lavender-dark), 0 0 60px var(--lavender-dark),
-    inset -4px -4px 10px var(--lavender-dark), 0 0 40px var(--lavender-dark), 0 0 60px var(--lavender-dark);
+  box-shadow:
+    inset 0 0 10px var(--lavender-light),
+    0 0 20px rgba(180,150,210,0.5),
+    inset 4px 4px 10px var(--lavender-dark),
+    0 0 40px rgba(106,13,173,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.avatar:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 0 6px rgba(180,150,210,0.3),
+    0 0 40px rgba(180,150,210,0.5);
+}
+
 .avatar img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  display: block;
 }
 
-/* ── VARIABLES ──────────────────────────────── */
-:root {
-  --lavender: #b497bd;
-  --lavender-light: #e8d9ed;
-  --lavender-dark: #7a5a7a;
-  
-  --teal: #6ec1c2;
-  --teal-light: #d0f0f1;
-  --teal-dark: #3b7a7c;
-  
-  --coral: #df61ff;
-  --coral-light: #ffdad4;
-  --coral-dark: #b23c2e;
-  
-  --pink: #ffb6c1;
-  --pink-light: #ffe0eb;
-  --pink-dark: #b36b79;
-  
-  --blue: #87ceeb;
-  --blue-light: #d0f0ff;
-  --blue-dark: #4a90e2;
-  
-  --amber: #ffc107;
-  --amber-light: #fff3cd;
-  --amber-dark: #b28704;
-
-  --text-light: #333333; /* dark gray for better contrast */
+/* ── HERO TEXT ──────────────────────────────── */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
+.hero-text h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
 
-/* ── BUTTONS ────────────────────────────────── */
+.hero:hover .hero-text h1 {
+  color: var(--lavender-light);
+}
 
+.hero-text p {
+  font-size: 15px;
+  color: rgba(245,239,254,0.75);
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
 
-/* ── PAGE WRAPPER ───────────────────────────── */
-
-
-/* ── SECTION LABEL ──────────────────────────── */
-
-
-/* ── CARD BASE ──────────────────────────────── */
-
-
-/* ── HERO ───────────────────────────────────── */
-
+.hero:hover .hero-text p {
+  color: var(--lavender-light);
+}
 
 /* ── ABOUT ──────────────────────────────────── */
+.about-section {
+  margin-bottom: 28px;
+}
 
+.about-card {
+  padding: 2rem 2.25rem;
+  border-radius: 20px;
+  border: 1px solid rgba(180,150,210,0.35);
+  background: linear-gradient(135deg,
+    rgba(75,0,130,0.55) 0%,
+    rgba(106,13,173,0.45) 50%,
+    rgba(123,47,190,0.4) 100%
+  );
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-/* ── GRID ───────────────────────────────────── */
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216,180,254,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
 
+.about-card::after {
+  content: "";
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(191,219,254,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
 
-/* ── PILLS ──────────────────────────────────── */
+.about-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(75,0,130,0.5);
+}
 
+.about-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-white);
+  position: relative;
+  z-index: 1;
+}
 
-/* ── PROJECT CARDS ──────────────────────────── */
+/* ── HOBBIES ────────────────────────────────── */
+.hobbies-section {
+  margin-bottom: 28px;
+}
 
+.pill-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 1.75rem 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(180,150,210,0.35);
+  background: linear-gradient(135deg,
+    rgba(75,0,130,0.55) 0%,
+    rgba(106,13,173,0.45) 50%,
+    rgba(123,47,190,0.4) 100%
+  );
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-/* ── FLIP CARD ──────────────────────────────── */
+.pill-wrap:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(75,0,130,0.5);
+}
 
+.pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
 
-/* ── NAV & INDICATORS ───────────────────────── */
+.pill:hover {
+  transform: translateY(-2px) scale(1.05);
+}
 
+.pill-purple  { background: rgba(232,217,237,0.2); color: var(--lavender-light); border: 1px solid var(--lavender); }
+.pill-teal    { background: rgba(208,240,241,0.2); color: var(--teal-light);     border: 1px solid var(--teal); }
+.pill-coral   { background: rgba(249,232,255,0.2); color: #e8aaff;              border: 1px solid var(--coral); }
+.pill-pink    { background: rgba(255,224,235,0.2); color: var(--pink-light);    border: 1px solid var(--pink); }
+.pill-blue    { background: rgba(208,240,255,0.2); color: var(--blue-light);    border: 1px solid var(--blue); }
+.pill-amber   { background: rgba(255,243,205,0.2); color: var(--amber-light);   border: 1px solid var(--amber); }
+.pill-lavender{ background: rgba(240,232,248,0.2); color: var(--lavender-light);border: 1px solid var(--lavender); }
+.pill-rose    { background: rgba(255,232,240,0.2); color: var(--pink-light);    border: 1px solid var(--pink); }
+.pill-sky     { background: rgba(224,242,254,0.2); color: var(--blue-light);    border: 1px solid var(--blue); }
 
-/* ── ANIMATIONS ─────────────────────────────── */
+/* ── MOVIES ─────────────────────────────────── */
+.movies-section {
+  margin-bottom: 28px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(180,150,210,0.35);
+  background: linear-gradient(145deg,
+    rgba(75,0,130,0.55) 0%,
+    rgba(106,13,173,0.45) 50%,
+    rgba(123,47,190,0.4) 100%
+  );
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216,180,254,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(75,0,130,0.5);
+}
+
+.card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-white);
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.card p {
+  font-size: 13px;
+  color: rgba(245,239,254,0.75);
+  margin-top: 6px;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── GLOW ORBS ──────────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  top: -150px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180,100,255,0.25) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -150px;
+  right: -150px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,130,255,0.2) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* ── HERO GLOW ──────────────────────────────── */
+.hero {
+  box-shadow:
+    0 0 40px rgba(180,100,255,0.2),
+    0 0 80px rgba(150,60,255,0.1);
+}
+
+/* ── CARD GLOW ──────────────────────────────── */
+.about-card,
+.pill-wrap,
+.card {
+  box-shadow:
+    0 0 20px rgba(180,100,255,0.15),
+    0 4px 24px rgba(75,0,130,0.3);
+}
+
+.about-card:hover,
+.pill-wrap:hover,
+.card:hover {
+  box-shadow:
+    0 0 40px rgba(180,100,255,0.3),
+    0 8px 32px rgba(75,0,130,0.5);
+}
+
+/* ── AVATAR GLOW ────────────────────────────── */
+.avatar {
+  box-shadow:
+    inset 0 0 10px var(--lavender-light),
+    0 0 20px rgba(180,100,255,0.4),
+    0 0 50px rgba(150,60,255,0.25);
+}
+
+.avatar:hover {
+  box-shadow:
+    0 0 0 6px rgba(180,150,210,0.3),
+    0 0 40px rgba(180,100,255,0.5),
+    0 0 80px rgba(150,60,255,0.3);
+}
+
+/* ── PILL SHADOWS ───────────────────────────── */
+.pill {
+  box-shadow:
+    0 2px 8px rgba(75,0,130,0.25),
+    0 0 12px rgba(180,100,255,0.15);
+}
+
+.pill:hover {
+  box-shadow:
+    0 4px 16px rgba(75,0,130,0.35),
+    0 0 20px rgba(180,100,255,0.25);
+}
+
+.pill-purple  { box-shadow: 0 2px 8px rgba(180,150,210,0.3), 0 0 12px rgba(180,100,255,0.15); }
+.pill-teal    { box-shadow: 0 2px 8px rgba(110,193,194,0.3), 0 0 12px rgba(110,193,194,0.15); }
+.pill-coral   { box-shadow: 0 2px 8px rgba(223,97,255,0.3),  0 0 12px rgba(223,97,255,0.15); }
+.pill-pink    { box-shadow: 0 2px 8px rgba(255,182,193,0.3), 0 0 12px rgba(255,182,193,0.15); }
+.pill-blue    { box-shadow: 0 2px 8px rgba(135,206,235,0.3), 0 0 12px rgba(135,206,235,0.15); }
+.pill-amber   { box-shadow: 0 2px 8px rgba(255,193,7,0.3),   0 0 12px rgba(255,193,7,0.15); }
+.pill-lavender{ box-shadow: 0 2px 8px rgba(180,150,210,0.3), 0 0 12px rgba(180,100,255,0.15); }
+.pill-rose    { box-shadow: 0 2px 8px rgba(255,182,193,0.3), 0 0 12px rgba(255,150,180,0.15); }
+.pill-sky     { box-shadow: 0 2px 8px rgba(135,206,235,0.3), 0 0 12px rgba(135,206,255,0.15); }
