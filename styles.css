@@ -24,7 +24,7 @@
   --amber-light: #fff3cd;
   --amber-dark:  #b28704;
 
-  --royal:       #4b0082;
+  --royal:       #411560;
   --royal-mid:   #6a0dad;
   --royal-light: #7b2fbe;
 
@@ -40,7 +40,7 @@
 }
 
 body {
-  background: linear-gradient(160deg, #2e0057 0%, #4b0082 40%, #6a0dad 100%);
+  background: linear-gradient(160deg, #a871d7 0%, #4b0082 40%, #6a0dad 100%);
   min-height: 100vh;
   font-family: system-ui, sans-serif;
   color: var(--text-white);
@@ -67,16 +67,16 @@ body {
   justify-content: center;
   gap: 2rem;
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, rgba(75,0,130,0.6) 0%, rgba(106,13,173,0.5) 100%);
+  background: linear-gradient(135deg, rgba(234, 222, 243, 0.6) 0%, rgba(106,13,173,0.5) 100%);
   border-radius: 20px;
-  border: 1px solid rgba(180,150,210,0.35);
+  border: 1px solid rgba(132, 73, 191, 0.35);
   margin-bottom: 28px;
   backdrop-filter: blur(8px);
   transition: background 0.4s ease;
 }
 
 .hero:hover {
-  background: linear-gradient(135deg, rgba(106,13,173,0.7) 0%, rgba(123,47,190,0.6) 100%);
+  background: linear-gradient(135deg, rgba(81, 56, 99, 0.7) 0%, rgba(123,47,190,0.6) 100%);
 }
 
 /* ── AVATAR ─────────────────────────────────── */
@@ -152,11 +152,11 @@ body {
 .about-card {
   padding: 2rem 2.25rem;
   border-radius: 20px;
-  border: 1px solid rgba(180,150,210,0.35);
+  border: 1px solid rgba(212, 190, 233, 0.35);
   background: linear-gradient(135deg,
-    rgba(75,0,130,0.55) 0%,
-    rgba(106,13,173,0.45) 50%,
-    rgba(123,47,190,0.4) 100%
+    rgba(144, 7, 242, 0.55) 0%,
+    rgba(214, 191, 231, 0.45) 50%,
+    rgba(151, 86, 207, 0.4) 100%
   );
   backdrop-filter: blur(8px);
   position: relative;
@@ -170,7 +170,7 @@ body {
   top: -40px; right: -40px;
   width: 180px; height: 180px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(216,180,254,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(110, 26, 201, 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -180,13 +180,13 @@ body {
   bottom: -40px; left: -40px;
   width: 160px; height: 160px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(191,219,254,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(27, 125, 244, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .about-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(75,0,130,0.5);
+  box-shadow: 0 8px 32px rgba(103, 39, 232, 0.693);
 }
 
 .about-card p {
@@ -208,11 +208,11 @@ body {
   gap: 10px;
   padding: 1.75rem 2rem;
   border-radius: 20px;
-  border: 1px solid rgba(180,150,210,0.35);
+  border: 1px solid rgba(15, 1, 29, 0.35);
   background: linear-gradient(135deg,
-    rgba(75,0,130,0.55) 0%,
-    rgba(106,13,173,0.45) 50%,
-    rgba(123,47,190,0.4) 100%
+    rgba(22, 1, 37, 0.55) 0%,
+    rgba(183, 166, 196, 0.45) 50%,
+    rgba(162, 121, 199, 0.4) 100%
   );
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -220,7 +220,7 @@ body {
 
 .pill-wrap:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(75,0,130,0.5);
+  box-shadow: 0 8px 32px rgba(112, 33, 169, 0.5);
 }
 
 .pill {
@@ -236,13 +236,13 @@ body {
   transform: translateY(-2px) scale(1.05);
 }
 
-.pill-purple  { background: rgba(232,217,237,0.2); color: var(--lavender-light); border: 1px solid var(--lavender); }
+.pill-purple  { background: rgba(128, 31, 160, 0.2); color: var(--lavender-light); border: 1px solid var(--lavender); }
 .pill-teal    { background: rgba(208,240,241,0.2); color: var(--teal-light);     border: 1px solid var(--teal); }
 .pill-coral   { background: rgba(249,232,255,0.2); color: #e8aaff;              border: 1px solid var(--coral); }
-.pill-pink    { background: rgba(255,224,235,0.2); color: var(--pink-light);    border: 1px solid var(--pink); }
+.pill-pink    { background: rgba(174, 35, 84, 0.2); color: var(--pink-light);    border: 1px solid var(--pink); }
 .pill-blue    { background: rgba(208,240,255,0.2); color: var(--blue-light);    border: 1px solid var(--blue); }
 .pill-amber   { background: rgba(255,243,205,0.2); color: var(--amber-light);   border: 1px solid var(--amber); }
-.pill-lavender{ background: rgba(240,232,248,0.2); color: var(--lavender-light);border: 1px solid var(--lavender); }
+.pill-lavender{ background: rgba(110, 23, 197, 0.2); color: var(--lavender-light);border: 1px solid var(--lavender); }
 .pill-rose    { background: rgba(255,232,240,0.2); color: var(--pink-light);    border: 1px solid var(--pink); }
 .pill-sky     { background: rgba(224,242,254,0.2); color: var(--blue-light);    border: 1px solid var(--blue); }
 
